@@ -1,10 +1,12 @@
 import { request } from "./api"
 
 interface ICreateProductProps {
-    name: string
-    ean: string,
-    quantity: string,
-    min_replenishment: string
+    name: string;
+    codBar?: string;
+    type: string;
+    amount: number;
+    amountMin: number;
+    amountMax: number;
 }
 
 export class ProductsService {
@@ -12,14 +14,14 @@ export class ProductsService {
 
     async getProducts() {
 
-        const {data} = await request.get("/snacks")
+        const {data} = await request.get("/products")
 
         return data
     }
 
     async createProduct(body: ICreateProductProps) {
 
-        await request.post("/snacks", body)
+        await request.post("/products", body)
     }
 
 

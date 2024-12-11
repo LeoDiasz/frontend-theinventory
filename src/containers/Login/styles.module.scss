@@ -4,10 +4,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    gap: 40px;
+    text-align: center;
+
+    > div h2 {
+        margin-bottom: 1rem;
+    }
+   
+
+    > img {
+        width: 250px;
+        align-self: center;
+    }
+
+
+    button {
+        gap: 20px;
+        height: 3.5rem
+    }
 }
 

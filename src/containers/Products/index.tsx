@@ -1,24 +1,22 @@
-import React, { useState } from "react";
+import { useEffect } from "react";
+import { useSearchProducts } from "../../hooks/useSearchProducts";
+import { AppContainerPages } from "../../components/AppContainerPages";
+import { Box } from "@mui/material";
 import { CardProduct } from "./CardProduct";
+import styles from "./styles.module.scss"
 
 export const Products = () => {
-    const [searchTerm, setSearchTerm] = useState("");
-    
-    return (
-        <div>
-        <h2 className="text-xl font-semibold mb-2 mt-8">Listagem de Produtos</h2>
-        <div className="mb-4">
-            <input
-            type="text"
-            placeholder="Buscar por Nome ou EAN"
-            value={searchTerm}
-            onChange={() => {}}
-            className="w-full p-2 border border-gray-300 rounded"
-            />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          
-        </div>
-        </div>
-    );
+  const { data, getProducts } = useSearchProducts();
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  return (
+    <AppContainerPages title="Listagem de Produtos" subTitle="Liste e filtre os produtos já cadastrados.">
+      <>
+        <Box className={styles.boxProducts}>{data && data.map((item) => <CardProduct {...item} />)}</Box>
+      </>
+    </AppContainerPages>
+  );
 };

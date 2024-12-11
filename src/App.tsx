@@ -6,6 +6,7 @@ import { Products } from "./containers/Products";
 import { Moviments } from "./containers/Moviments";
 import { PAGE } from "./constants";
 import { AppContainer } from "./components";
+import "./app.scss"
 
 function App() {
 

@@ -7,3 +7,7 @@ export const PAGE = {
     CREATE_PRODUCTS: () => "/produtos/cadastrar",
     LIST_MOVIMENTS: () => "/movimentacoes"
 } 
+
+export const REQUIRED_MSG = "Campo Obrigatório";
+export const MAX_MSG = "Maximo 100";
+export const MIN_MSG = "Minimo 1";

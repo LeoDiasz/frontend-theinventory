@@ -1,0 +1,25 @@
+.boxHome {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-self: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cardMenu {
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    height: 10rem;
+    width: 18rem;
+    gap: 1.5rem;
+
+    svg {
+        font-size: 45px;
+    }
+}
+
+

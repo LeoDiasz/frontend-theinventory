@@ -3,18 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { PAGE } from "../../constants";
-import { Button, Container } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import GoogleIcon from "@mui/icons-material/Google";
-import logoPng from "../../assets/logo.png"
+import logoPng from "../../assets/logo.png";
 import { initializeApp } from "firebase/app";
-import { Title } from "@mui/icons-material";
-const provider = new GoogleAuthProvider();
+import styles from "./styles.module.scss"
 
-interface IForm {
-  username: string;
-  password: string;
-}
+const provider = new GoogleAuthProvider();
 
 const firebaseConfig = {
   apiKey: "AIzaSyDNdivGyk4JMbglbqI5aDkr1j3f97vdj7I",
@@ -32,12 +28,8 @@ export const Login = () => {
   const auth = getAuth(app);
 
   const {
-    register,
-    setValue,
-    getValues,
     handleSubmit,
-    formState: { errors, isValid: isValidForm },
-  } = useForm<IForm>({ mode: "all" });
+  } = useForm({ mode: "all" });
 
   const onSubmit = handleSubmit(async () => {
     signInWithPopup(auth, provider)
@@ -68,92 +60,23 @@ export const Login = () => {
   }, [navigate]);
 
   return (
-    <Container>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "end",
-          margin: "auto",
-          height: "100vh",
-          width: "100vh"
-        }}
-      >
-        <form
-          onSubmit={onSubmit}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "400px",
-            gap: "12px",
-          }}
+    <Container maxWidth="md" className={styles.containerLogin}>
+      <form onSubmit={onSubmit} className={styles.form}>
+        <img src={logoPng} />
+        <div>
+          <Typography variant="h2">Bem-vindo</Typography>
+          <Typography variant="h6" >
+            Tenha a gestão do seu estoque na palma da mão!
+          </Typography>
+        </div>
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
         >
-          <img  src={logoPng} style={{width: "150px"}}/>
-          <div style={{textAlign: "center"}}>
-            <h1>Bem-vindo</h1>
-            <p>Tenha a gestão do seu estoque na palma da sua mão</p>
-          </div>
-          <Button type="submit" variant="contained" size="large" style={{gap: '20px'}}>
-            <GoogleIcon /> Iniciar Sessão com o Google
-          </Button>
-        </form>
-      </div>
+          <GoogleIcon /> Iniciar Sessão com o Google
+        </Button>
+      </form>
     </Container>
   );
 };
-
-// Inline styles
-// const styles = {
-//   container: {
-//     backgroundImage: `url(${backgroundImage})`,
-//     backgroundSize: "300px 50%", // Set the desired width and height for the background image
-//     backgroundPosition: "top",
-//     backgroundRepeat: "no-repeat",
-//     display: "flex",
-//     flexDirection: "column",
-//     justifyContent: "center",
-//     alignItems: "center",
-//     height: "100vh",
-//     backgroundColor: "#f4f4f4",
-//     padding: "20px",
-//     boxSizing: "border-box",
-//   },
-//   logoBox: {
-//     width: "100px",
-//   },
-//   p: {
-//     //add paddinf top
-//   },
-//   title: {
-//     marginBottom: "20px",
-//     fontSize: "2rem",
-//     color: "#000",
-//   },
-//   form: {
-//     display: "flex",
-//     flexDirection: "column",
-//     width: "300px",
-//     background: "white",
-//     padding: "20px",
-//     borderRadius: "8px",
-//     boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-//   },
-//   input: {
-//     marginBottom: "15px",
-//     padding: "10px",
-//     border: "1px solid #ccc",
-//     borderRadius: "4px",
-//     fontSize: "1rem",
-//   },
-//   button: {
-//     padding: "10px",
-//     backgroundColor: "#007bff",
-//     color: "white",
-//     border: "none",
-//     borderRadius: "4px",
-//     fontSize: "1rem",
-//     cursor: "pointer",
-//     transition: "background-color 0.3s ease",
-//   },
-// };

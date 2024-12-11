@@ -1,0 +1,47 @@
+
+
+.form {
+    display: flex;
+    padding: 40px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    width: 100%;
+
+
+    > div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        button {
+            margin-top: 1rem;
+            width: 100;
+            height: 3.5rem;
+        }
+    }
+}
+
+
+
+
+.boxInputWithTwo {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+
+    > div {
+        width: 100%;
+    }
+}
+
+
+.buttonCreate {
+    width: 30%;
+    height: 4rem;
+}
+
+   
+
+
+
