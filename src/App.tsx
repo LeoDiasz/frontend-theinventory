@@ -7,6 +7,7 @@ import { Moviments } from "./containers/Moviments";
 import { PAGE } from "./constants";
 import { AppContainer } from "./components";
 import "./app.scss"
+import { CreateMoviment } from "./containers/CreateMoviment";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route path={PAGE.CREATE_PRODUCTS()} element={<CreateProduct/>} />
           <Route path={PAGE.LIST_PRODUCTS()} element={<Products/>} />
           <Route path={PAGE.LIST_MOVIMENTS()} element={<Moviments/>} />
+          <Route path={PAGE.CREATE_MOVIMENTS()} element={<CreateMoviment/>} />
         </Routes>
       </AppContainer>
     </Router>

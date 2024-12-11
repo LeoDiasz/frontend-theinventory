@@ -1,15 +1,20 @@
+import { ICreateMovimentRequest, IGetMovimentRequest } from "../models/moviments";
 import { request } from "./api";
 
-class MovimentsService {
+export class MovimentsService {
   private static INSTANCE: MovimentsService;
 
+  async getMoviments(body: IGetMovimentRequest) {
 
-
-  async getMoviments() {
-
-    const {data} = await request("/moviments")
+    const {data} = await request.post(`/moviments/search`, body)
 
     return data
+  }
+
+  async createMoviment(body: ICreateMovimentRequest) {
+    
+    await request.post("/moviments", body)
+
   }
 
   static getInstance() {

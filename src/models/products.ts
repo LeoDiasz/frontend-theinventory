@@ -6,7 +6,7 @@ export type movimentsProduct = {
 }
 
 export interface ProductResponse {
-    uid?: string;
+    id?: string;
     name?: string;
     codBar?: string;
     type?: string;

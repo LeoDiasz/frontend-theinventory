@@ -10,3 +10,27 @@
     width: 30%;
     height: 4rem;
 }
+
+
+.listItemMoviment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.boxList {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.boxColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem
+}

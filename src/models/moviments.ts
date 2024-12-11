@@ -1,7 +1,16 @@
-export type movimentsResponse = {
-    id: string;
+export type IMovimentsResponse = {
     idProduct: string;
     type: string
     amount: number;
-    date: Date;
+    date: string;
+}
+
+export interface ICreateMovimentRequest {
+    type: string;
+    amount: number;
+    idProduct?: string;
+}
+
+export interface IGetMovimentRequest {
+    id: string;
 }

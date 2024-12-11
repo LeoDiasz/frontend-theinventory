@@ -5,7 +5,8 @@ export const PAGE = {
     HOME: () => "/home",
     LIST_PRODUCTS: () => "/produtos/listagem",
     CREATE_PRODUCTS: () => "/produtos/cadastrar",
-    LIST_MOVIMENTS: () => "/movimentacoes"
+    LIST_MOVIMENTS: () => "/movimentacoes/:id/:name",
+    CREATE_MOVIMENTS: () => "/movimentacoes/cadastrar/:id/:name/:type"
 } 
 
 export const REQUIRED_MSG = "Campo Obrigatório";

@@ -53,7 +53,7 @@ export const CreateProduct = () => {
   const onSubmit = handleSubmit(async () => {
     const body = {
       name: getValues().name,
-      ean: getValues().codBar,
+      codBar: getValues().codBar,
       amount: getValues().amount,
       amountMin: getValues().amountMin,
       amountMax: getValues().amountMax,
